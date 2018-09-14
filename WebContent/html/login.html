@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+    function findUser(){
+    	x=new XMLHttpRequest();
+    	x.onreadystatechange=function(){
+    		if(x.readyState ==4 && x.status == 200){
+    			document.getElementById("message").innerHTML=x.responseText;
+    			document.getElementById("message").style.display="block";
+    		}
+    	};
+    	x.open("get","../test",true);
+    	x.send();
+    }
+    
+</script>
+</head>
+<body>
+    <div>
+        <div>
+            <p>WE ARE PLANETS</p>
+        </div>
+        <div>
+            <span>UserName：</span><input type="text" /><br/>
+            <input type="button" value="click me to find user" onclick="findUser();"/>
+        </div>
+        <div id="message" style="dispaly:none"></div>
+    </div>
+</body>
+</html>

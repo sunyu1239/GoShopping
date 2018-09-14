@@ -9,6 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+import com.weShop.allPackage.servicePackage.UserService;
+
 public class BServlet implements Servlet {
 
   @Override
@@ -26,9 +28,11 @@ public class BServlet implements Servlet {
   @Override
   public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
     // TODO Auto-generated method stub
+    UserService us = new UserService();
+    String message = us.getResult();
     res.setContentType("text/html;charset=UTF-8");
     PrintWriter out = res.getWriter();
-    out.write("<div>你说呢</div>");
+    out.write(message);
     out.flush();
     out.close();
   }
