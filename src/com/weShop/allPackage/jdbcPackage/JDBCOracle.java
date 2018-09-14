@@ -9,9 +9,9 @@ import java.sql.Statement;
 public final class JDBCOracle {
 
   private static final String driver = "oracle.jdbc.driver.OracleDriver";
-  private static final String url = "jdbc:oracle:thin:@localhost:1521:root";
-  private static final String username = "sunyu";
-  private static final String password = "admin";
+  private static final String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+  private static final String username = "root";
+  private static final String password = "root";
   private Connection connection = null;
   private Statement statement = null;
   private ResultSet resultSet = null;
