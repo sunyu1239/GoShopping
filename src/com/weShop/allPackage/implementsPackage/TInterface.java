@@ -34,3 +34,19 @@ abstract class ss<T> {
   protected int a;
   T s;
 }
+
+class C implements A<String> {
+
+  @Override
+  public String get() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void s() {
+    // TODO Auto-generated method stub
+
+  }
+
+}
