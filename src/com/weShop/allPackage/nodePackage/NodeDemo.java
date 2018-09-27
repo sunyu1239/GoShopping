@@ -122,6 +122,22 @@ public class NodeDemo {
     return result;
   }
 
+  // 链表反转
+  boolean NodeRevert() {
+    boolean result = false;
+    if (head == null || head.next == null)
+      return true;
+    Node temp = head;
+    Node pre = null;
+    while (temp != null) {
+      Node nexNode = temp.next;
+      temp.next = pre;
+      pre = nexNode;
+    }
+
+    return result;
+  }
+
   // 打印所有节点数据
   void printNode() {
     Node temp = head;
@@ -147,7 +163,7 @@ public class NodeDemo {
     nd.addNode(100, 10);
     nd.printNode();
     System.out.println();
-    nd2.printNode();
+    // nd2.printNode();
 
     // 按照节点位置删除
     // nd.deleteNode(10);
@@ -162,8 +178,10 @@ public class NodeDemo {
     // nd.addNodeDirect(nodeSource, node);
 
     // 指定位置添加节点
-    nd.addNodeIndex(2, 50);
-    System.out.println();
+    // nd.addNodeIndex(2, 50);
+
+    result = nd.NodeRevert();
+    System.out.println(result);
     nd.printNode();
   }
 }
