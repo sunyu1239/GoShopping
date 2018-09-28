@@ -129,12 +129,20 @@ public class NodeDemo {
       return true;
     Node temp = head;
     Node pre = null;
+    Node fi = null;
     while (temp != null) {
       Node nexNode = temp.next;
+      if (nexNode == null) {
+        fi = temp;
+        System.out.println("fi:" + fi);
+      }
       temp.next = pre;
-      pre = nexNode;
+      pre = temp;
+      temp = nexNode;
     }
-
+    head = fi;
+    // printRevertNode(head);
+    System.out.println("headrev:" + this.head);
     return result;
   }
 
@@ -143,7 +151,17 @@ public class NodeDemo {
     Node temp = head;
     for (int i = 0; i < getNodeLength(); i++) {
       System.out.print("[" + temp.data + "] ");
+      System.out.println("address" + i + ":" + temp);
       temp = temp.next;
+    }
+    System.out.println("head:" + this.head);
+  }
+
+  void printRevertNode(Node n) {
+    for (int i = 0; i < 11; i++) {
+      System.out.print("[" + n.data + "], ");
+      System.out.println("addressrev" + i + ":" + n);
+      n = n.next;
     }
   }
 
