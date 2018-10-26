@@ -4,13 +4,13 @@ public class ArrDemo {
 
   public static void main(String[] args) {
     int[] a = new int[5];
-    Arr[] arr = new Arr[5];
+    ArrT[] arr = new ArrT[5];
 
     int k = 0;
     int j = 0;
     for (int i = 0; i < 5; i++) {
       a[i] = i;
-      Arr temp = new Arr();
+      ArrT temp = new ArrT();
       arr[i] = temp;
     }
     while (k < 5) {
